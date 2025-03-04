@@ -1,1 +1,298 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fotbalový Kvíz</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script>
+        let score = 0; // Počáteční skóre
+        let answers = {
+            q1: '',
+            q2: '',
+            q3: '',
+            q4: '',
+            q5: '',
+            q6: '',
+            q7: '',
+            q8: '',
+            q9: '',
+            q10: ''
+        };
+
+        // Funkce pro zaznamenání odpovědi
+        function selectAnswer(question, answer) {
+            // Uloží vybranou odpověď
+            answers[question] = answer;
+        }
+
+        // Funkce pro odeslání kvízu a vyhodnocení skóre
+        function submitQuiz() {
+            score = 0;
+            if (answers.q1 === 'Francie') score++;
+            if (answers.q2 === 'Německo') score++;
+            if (answers.q3 === 'Luka Modrić') score++;
+            if (answers.q4 === 'Cristiano Ronaldo') score++;
+            if (answers.q5 === 'Brazílie') score++;
+            if (answers.q6 === 'Liverpool') score++;
+            if (answers.q7 === 'Manchester United') score++;
+            if (answers.q8 === 'Argentina') score++;
+            if (answers.q9 === 'Liverpool') score++;
+            if (answers.q10 === 'Kylian Mbappé') score++;
+
+            alert('Kvíz je hotov! Vaše skóre je: ' + score + ' z 10');
+        }
+    </script>
+    <style>
+        /* Pozadí pro celý web */
+        body {
+            background-image: url('background.jpg '); /* Změňte na váš vlastní obrázek */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white; /* Text je bílý, aby byl kontrastní s pozadím */
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .card {
+            background-color: rgba(0, 0, 0, 0.6); /* Poloprůhledné pozadí pro lepší čitelnost textu */
+            color: white;
+        }
+
+        h1, h3 {
+            font-family: 'Arial', sans-serif;
+        }
+
+        .form-check {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .form-check-input {
+            margin-right: 10px; /* Tímto přiblížíme radio button k textu */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container text-center p-5">
+        <h1 class="mb-4">Fotbalový Kvíz</h1>
+
+        <!-- Otázka 1 -->
+        <div class="card p-4 shadow-sm mb-4">
+            <h3>Který tým vyhrál Mistrovství světa 2018?</h3>
+            <div class="form-check">
+                <input type="radio" name="q1" value="Francie" id="q1a1" class="form-check-input" onclick="selectAnswer('q1', 'Francie')">
+                <label for="q1a1" class="form-check-label">Francie</label>
+            </div>
+            <div class="form-check">
+                <input type="radio" name="q1" value="Chorvatsko" id="q1a2" class="form-check-input" onclick="selectAnswer('q1', 'Chorvatsko')">
+                <label for="q1a2" class="form-check-label">Chorvatsko</label>
+            </div>
+            <div class="form-check">
+                <input type="radio" name="q1" value="Brazílie" id="q1a3" class="form-check-input" onclick="selectAnswer('q1', 'Brazílie')">
+                <label for="q1a3" class="form-check-label">Brazílie</label>
+            </div>
+            <div class="form-check">
+                <input type="radio" name="q1" value="Německo" id="q1a4" class="form-check-input" onclick="selectAnswer('q1', 'Německo')">
+                <label for="q1a4" class="form-check-label">Německo</label>
+            </div>
+        </div>
+
+        <!-- Otázka 2 -->
+        <div class="card p-4 shadow-sm mb-4">
+            <h3>Který tým vyhrál Mistrovství světa 2014?</h3>
+            <div class="form-check">
+                <input type="radio" name="q2" value="Německo" id="q2a1" class="form-check-input" onclick="selectAnswer('q2', 'Německo')">
+                <label for="q2a1" class="form-check-label">Německo</label>
+            </div>
+            <div class="form-check">
+                <input type="radio" name="q2" value="Argentina" id="q2a2" class="form-check-input" onclick="selectAnswer('q2', 'Argentina')">
+                <label for="q2a2" class="form-check-label">Argentina</label>
+            </div>
+            <div class="form-check">
+                <input type="radio" name="q2" value="Brazílie" id="q2a3" class="form-check-input" onclick="selectAnswer('q2', 'Brazílie')">
+                <label for="q2a3" class="form-check-label">Brazílie</label>
+            </div>
+            <div class="form-check">
+                <input type="radio" name="q2" value="Francie" id="q2a4" class="form-check-input" onclick="selectAnswer('q2', 'Francie')">
+                <label for="q2a4" class="form-check-label">Francie</label>
+            </div>
+        </div>
+
+        <!-- Otázka 3 -->
+        <div class="card p-4 shadow-sm mb-4">
+            <h3>Kdo vyhrál Zlatý míč na Mistrovství světa 2018?</h3>
+            <div class="form-check">
+                <input type="radio" name="q3" value="Luka Modrić" id="q3a1" class="form-check-input" onclick="selectAnswer('q3', 'Luka Modrić')">
+                <label for="q3a1" class="form-check-label">Luka Modrić</label>
+            </div>
+            <div class="form-check">
+                <input type="radio" name="q3" value="Cristiano Ronaldo" id="q3a2" class="form-check-input" onclick="selectAnswer('q3', 'Cristiano Ronaldo')">
+                <label for="q3a2" class="form-check-label">Cristiano Ronaldo</label>
+            </div>
+            <div class="form-check">
+                <input type="radio" name="q3" value="Lionel Messi" id="q3a3" class="form-check-input" onclick="selectAnswer('q3', 'Lionel Messi')">
+                <label for="q3a3" class="form-check-label">Lionel Messi</label>
+            </div>
+            <div class="form-check">
+                <input type="radio" name="q3" value="Neymar" id="q3a4" class="form-check-input" onclick="selectAnswer('q3', 'Neymar')">
+                <label for="q3a4" class="form-check-label">Neymar</label>
+            </div>
+        </div>
+
+        <!-- Otázka 4 -->
+        <div class="card p-4 shadow-sm mb-4">
+            <h3>Který fotbalista je známý svou přezdívkou "CR7"?</h3>
+            <div class="form-check">
+                <input type="radio" name="q4" value="Cristiano Ronaldo" id="q4a1" class="form-check-input" onclick="selectAnswer('q4', 'Cristiano Ronaldo')">
+                <label for="q4a1" class="form-check-label">Cristiano Ronaldo</label>
+            </div>
+            <div class="form-check">
+                <input type="radio" name="q4" value="Lionel Messi" id="q4a2" class="form-check-input" onclick="selectAnswer('q4', 'Lionel Messi')">
+                <label for="q4a2" class="form-check-label">Lionel Messi</label>
+            </div>
+            <div class="form-check">
+                <input type="radio" name="q4" value="Neymar" id="q4a3" class="form-check-input" onclick="selectAnswer('q4', 'Neymar')">
+                <label for="q4a3" class="form-check-label">Neymar</label>
+            </div>
+            <div class="form-check">
+                <input type="radio" name="q4" value="Zlatan Ibrahimović" id="q4a4" class="form-check-input" onclick="selectAnswer('q4', 'Zlatan Ibrahimović')">
+                <label for="q4a4" class="form-check-label">Zlatan Ibrahimović</label>
+            </div>
+        </div>
+
+        <!-- Otázka 5 -->
+        <div class="card p-4 shadow-sm mb-4">
+            <h3>Který tým vyhrál Copa América 2019?</h3>
+            <div class="form-check">
+                <input type="radio" name="q5" value="Brazílie" id="q5a1" class="form-check-input" onclick="selectAnswer('q5', 'Brazílie')">
+                <label for="q5a1" class="form-check-label">Brazílie</label>
+            </div>
+            <div class="form-check">
+                <input type="radio" name="q5" value="Argentina" id="q5a2" class="form-check-input" onclick="selectAnswer('q5', 'Argentina')">
+                <label for="q5a2" class="form-check-label">Argentina</label>
+            </div>
+            <div class="form-check">
+                <input type="radio" name="q5" value="Chile" id="q5a3" class="form-check-input" onclick="selectAnswer('q5', 'Chile')">
+                <label for="q5a3" class="form-check-label">Chile</label>
+            </div>
+            <div class="form-check">
+                <input type="radio" name="q5" value="Kolumbie" id="q5a4" class="form-check-input" onclick="selectAnswer('q5', 'Kolumbie')">
+                <label for="q5a4" class="form-check-label">Kolumbie</label>
+            </div>
+        </div>
+        <!-- Otázka 6 -->
+        <div class="card p-4 shadow-sm mb-4">
+            <h3>Který tým je nejlepší tým v Anglii?</h3>
+            <div class="form-check">
+                <input type="radio" name="q6" value="Arsenal" id="q6a1" class="form-check-input" onclick="selectAnswer('q6', 'Arsenal')">
+                <label for="q6a1" class="form-check-label">Arsenal</label>
+            </div>
+            <div class="form-check">
+                <input type="radio" name="q6" value="Manchester United" id="q6a2" class="form-check-input" onclick="selectAnswer('q6', 'Manchester United')">
+                <label for="q6a2" class="form-check-label">Manchester United</label>
+            </div>
+            <div class="form-check">
+                <input type="radio" name="q6" value="Liverpool" id="q6a3" class="form-check-input" onclick="selectAnswer('q6', 'Liverpool')">
+                <label for="q6a3" class="form-check-label">Liverpool</label>
+            </div>
+            <div class="form-check">
+                <input type="radio" name="q6" value="Manchester City" id="q6a4" class="form-check-input" onclick="selectAnswer('q6', 'Manchester City')">
+                <label for="q6a4" class="form-check-label">Manchester City</label>
+            </div>
+        </div>
+        <!-- Otázka 7 -->
+        <div class="card p-4 shadow-sm mb-4">
+            <h3>Který tým vyhrál ligu 20krát?</h3>
+            <div class="form-check">
+                <input type="radio" name="q7" value="Spurs" id="q7a1" class="form-check-input" onclick="selectAnswer('q7', 'Spurs')">
+                <label for="q7a1" class="form-check-label">Spurs</label>
+            </div>
+            <div class="form-check">
+                <input type="radio" name="q7" value="Manchester United" id="q7a2" class="form-check-input" onclick="selectAnswer('q7', 'Manchester United')">
+                <label for="q7a2" class="form-check-label">Manchester United</label>
+            </div>
+            <div class="form-check">
+                <input type="radio" name="q7" value="Liverpool" id="q7a3" class="form-check-input" onclick="selectAnswer('q7', 'Liverpool')">
+                <label for="q7a3" class="form-check-label">Liverpool</label>
+            </div>
+            <div class="form-check">
+                <input type="radio" name="q7" value="Manchester City" id="q7a4" class="form-check-input" onclick="selectAnswer('q7', ' Chelsea')">
+                <label for="q7a4" class="form-check-label">Chelsea</label>
+            </div>
+        </div>
+        <!-- Otázka 8 -->
+        <div class="card p-4 shadow-sm mb-4">
+            <h3>Kdo vyhrál Mistrovství světa 2022?</h3>
+            <div class="form-check">
+                <input type="radio" name="q8" value="Argentina" id="q8a1" class="form-check-input" onclick="selectAnswer('q8', 'Argentina')">
+                <label for="q8a1" class="form-check-label">Argentina</label>
+            </div>
+            <div class="form-check">
+                <input type="radio" name="q8" value="Anglie" id="q8a2" class="form-check-input" onclick="selectAnswer('q8', 'Anglie')">
+                <label for="q8a2" class="form-check-label">Anglie</label>
+            </div>
+            <div class="form-check">
+                <input type="radio" name="q8" value="Česko" id="q8a3" class="form-check-input" onclick="selectAnswer('q8', 'Česko')">
+                <label for="q8a3" class="form-check-label">Česko</label>
+            </div>
+            <div class="form-check">
+                <input type="radio" name="q8" value="Portugalsko" id="q8a4" class="form-check-input" onclick="selectAnswer('q8', ' Portugalsko')">
+                <label for="q8a4" class="form-check-label">Portugalsko</label>
+            </div>
+        </div>
+        <!-- Otázka 9 -->
+<div class="card p-4 shadow-sm mb-4">
+    <h3>Kdo vyhrál Ligu mistrů 2018/19</h3>
+    <div class="form-check">
+        <input type="radio" name="q9" value="Liverpool" id="q9a1" class="form-check-input" onclick="selectAnswer('q9', 'Liverpool')">
+        <label for="q9a1" class="form-check-label">Liverpool</label>
+    </div>
+    <div class="form-check">
+        <input type="radio" name="q9" value="Spurs" id="q9a2" class="form-check-input" onclick="selectAnswer('q9', 'Spurs')">
+        <label for="q9a2" class="form-check-label">Spurs</label>
+    </div>
+    <div class="form-check">
+        <input type="radio" name="q9" value="Real Madrid" id="q9a3" class="form-check-input" onclick="selectAnswer('q9', 'Real Madrid')">
+        <label for="q9a3" class="form-check-label">Real Madrid</label>
+    </div>
+    <div class="form-check">
+        <input type="radio" name="q9" value="Viktoria Plzen" id="q9a4" class="form-check-input" onclick="selectAnswer('q9', 'Viktoria Plzen')">
+        <label for="q9a4" class="form-check-label">Viktoria Plzen</label>
+    </div>
+</div>
+
+<!-- Otázka 10 -->
+<div class="card p-4 shadow-sm mb-4">
+    <h3>Kdo byl nejlepší střelec Mistrovství světa 2022?</h3>
+    <div class="form-check">
+        <input type="radio" name="q10" value="Kylian Mbappé" id="q10a1" class="form-check-input" onclick="selectAnswer('q10', 'Kylian Mbappé')">
+        <label for="q10a1" class="form-check-label">Kylian Mbappé</label>
+    </div>
+    <div class="form-check">
+        <input type="radio" name="q10" value="Lionel Messi" id="q10a2" class="form-check-input" onclick="selectAnswer('q10', 'Lionel Messi')">
+        <label for="q10a2" class="form-check-label">Lionel Messi</label>
+    </div>
+    <div class="form-check">
+        <input type="radio" name="q10" value="Cristiano Ronaldo" id="q10a3" class="form-check-input" onclick="selectAnswer('q10', 'Cristiano Ronaldo')">
+        <label for="q10a3" class="form-check-label">Cristiano Ronaldo</label>
+    </div>
+    <div class="form-check">
+        <input type="radio" name="q10" value="Harry Kane" id="q10a4" class="form-check-input" onclick="selectAnswer('q10', 'Harry Kane')">
+        <label for="q10a4" class="form-check-label">Harry Kane</label>
+    </div>
+</div>
+
+     
+        <button class="btn btn-primary mt-4" onclick="submitQuiz()">Odeslat Kvíz</button>
+    </div>
+
+</body>
+</html>
 
